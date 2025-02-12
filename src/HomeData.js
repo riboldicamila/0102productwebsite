@@ -5,28 +5,28 @@ import portfolio04 from "./Components/Images/portfolio04.png"
 import portfolio05 from "./Components/Images/portfolio05.png"
 
 
-export const mockData = { 
-  title: "Let's Build!",
+export const mockData = {
+  title: "Freshly Baked Just for You!",
   description:
-    "Creating web applications that are functional, responsive, and easy to use. Turn your ideas into reality.",
+    "Delicious treats crafted with love and the finest ingredients. Satisfy your cravings today!",
   benefits: [
     {
       icon: "https://via.placeholder.com/50",
-      title: "Frontend",
+      title: "Artisan Breads",
       description:
-        "Building clean, responsive interfaces that make websites easy to use.",
+        "Handcrafted daily with natural ingredients for that perfect crunch and softness.",
     },
     {
       icon: "https://via.placeholder.com/50",
-      title: "Backend & Databases",
+      title: "Sweet Pastries",
       description:
-        "Connecting frontend and backend to keep everything running.",
+        "Indulge in our freshly baked pastries, filled with love and flavor.",
     },
     {
       icon: "https://via.placeholder.com/50",
-      title: "Business & Tech",
+      title: "Custom Cakes",
       description:
-        "Bringing a tech perspective to business needs to create practical solutions.",
+        "Celebrate your special moments with our beautifully crafted custom cakes.",
     },
   ],
 };

@@ -12,12 +12,13 @@ function Home() {
   return (
     <div>
       <Carousel image1={home01} image2={home02} image3={home03} />
-      <SpecialCategory />
       <InformationBanner
         title={mockData.title}
         description={mockData.description}
         benefits={mockData.benefits}
       />
+    
+     
     </div>
   );
 }
