@@ -1,21 +1,30 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
-
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { register } from "swiper/element/bundle";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "./Carousel.css";
+import "swiper/css/autoplay";
+
 import GenericButton from "../Button";
+
+import "./Carousel.css";
+
+register();
 
 function Carousel({ image1, image2, image3 }) {
   return (
     <Swiper
-      modules={[Navigation, Pagination]}
+      modules={[Navigation, Pagination, Autoplay]}
       navigation
-      pagination={{ clickable: true }}
       spaceBetween={50}
       slidesPerView={1}
       style={{ maxHeight: "700px" }}
+      autoplay={{
+        delay: 5000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      }}
     >
       {[image1, image2, image3].map((image, index) => (
         <SwiperSlide
@@ -39,7 +48,7 @@ function Carousel({ image1, image2, image3 }) {
               objectPosition: "center center",
             }}
           />
-          {index !== 1 && (
+          {index === 0 && (
             <div
               style={{
                 position: "absolute",
@@ -50,10 +59,10 @@ function Carousel({ image1, image2, image3 }) {
               }}
             >
               <h2 style={{ fontSize: "1rem", textTransform: "uppercase" }}>
-                DEVELOPER
+                PAMPA BAKERY
               </h2>
               <h1 style={{ fontSize: "3rem", marginBottom: "1rem" }}>
-                Crafting Solutions
+                Freshly Baked, Always Delicious
               </h1>
               <p
                 style={{
@@ -62,10 +71,10 @@ function Carousel({ image1, image2, image3 }) {
                   marginBottom: "1rem",
                 }}
               >
-                Get to know my journey and how I become a software developer. 
-
+                Crafted with love, baked to perfection. Savor the warmth of
+                every bite.
               </p>
-              <GenericButton text="Know More" to="/about" />
+              <GenericButton text="Shop" to="/about" />
             </div>
           )}
         </SwiperSlide>
