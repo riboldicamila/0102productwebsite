@@ -1,50 +1,49 @@
 import React, { useState } from "react";
 import GenericButton from "../../Components/Button";
 import qa01 from "../../Components/Images/qa01.jpg";
-import "./Search.css"; 
+import "./Questions.css"; 
 
-const Search = () => {
+const Questions = () => {
   const [activeQuestion, setActiveQuestion] = useState(null);
 
   const faqData = [
     {
-      question: "What courses/trainings have I done?",
+      question: "What types of baked goods do you offer?",
       answer:
-        "I have completed several courses to enhance my skills, including The Complete Python Bootcamp by Udemy (2024), Advanced React by Meta (2023), React Js 35-hour course (2023), Web Development | HTML-CSS-SASS 38-hour course (2023), and UX Design: From Concept to Prototype (2021).",
+        "At Pampa Bakery, we offer a variety of freshly baked goods, including artisan breads, pastries, cakes, and cookies. We also have seasonal specialties and gluten-free options!",
     },
     {
-      question: "Do I have certifications?",
+      question: "Do you make custom cakes?",
       answer:
-        "Yes, I have obtained the AWS Certified Cloud Practitioner certification (2024), demonstrating my knowledge of cloud computing fundamentals.",
+        "Yes! We specialize in custom cakes for birthdays, weddings, and other special occasions. Contact us to design your perfect cake.",
     },
     {
-      question: "What is my level of English?",
+      question: "Where do you source your ingredients?",
       answer:
-        "My English proficiency is at a C1 level. I achieved the TOEFL iBT - CEFR Level C1 certification in 2020 and previously obtained the IGCSE English Certification in 2017.",
+        "We believe in quality and freshness. Our ingredients are locally sourced whenever possible, supporting community farmers and ensuring the finest taste.",
     },
   ];
 
   const logos = [ 
-    "React Js",
-    "HTML",
-    "JavaScript",
-    "CSS",
-    "Git",
-    "SQL",
+    "Fresh Ingredients",
+    "Artisan Bread",
+    "Custom Cakes",
+    "Gluten-Free Options",
+    "Pastries",
+    "Cookies",
   ];
-
 
   return (
     <div className="container">
       <div className="content-wrapper">
         <div className="image-section">
-          <img src={qa01} alt="Liliana pottery" className="main-image" />
+          <img src={qa01} alt="Pampa Bakery" className="main-image" />
         </div>
 
         <div className="content-section">
           <h2 className="faq-title">Q&A</h2>
           <p className="faq-subtitle">
-            Combining creativity and logic to build user-friendly applications.
+            Your questions about our freshly baked goods, answered!
           </p>
 
           {faqData.map((faq, index) => (
@@ -67,8 +66,8 @@ const Search = () => {
           ))}
 
           <GenericButton
-            text="LinkedIn"
-            to="https://www.linkedin.com/in/camila-riboldi/"
+            text="Order Online"
+            to="/order"
           />
         </div>
       </div>
@@ -84,4 +83,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default Questions;

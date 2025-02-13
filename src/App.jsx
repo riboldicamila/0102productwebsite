@@ -8,7 +8,7 @@ import AboutUs from './Pages/Home/AboutUs';
 import Contact from './Pages/Home/Contact';
 import CollectionPage from './Pages/Home/Collection';
 import CreationsDetails from './Components/CreationsCarousel/CreationsDetails';
-import WebsiteSearch from './Pages/Home/Search';
+import Questions from './Pages/Home/Questions';
 
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/technologies" element={<CollectionPage />} />
             <Route path="/blog/:slug" element={<CreationsDetails />} />
-            <Route path="/qa" element={<WebsiteSearch />} />
+            <Route path="/qa" element={<Questions />} />
 
           </Routes>
         </div>
