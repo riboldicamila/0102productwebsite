@@ -63,6 +63,10 @@
   background-color: #555;
 }
 
+.pink{
+  color: #F48FB1;
+}
+
 
 @media (max-width: 1024px) {
   .benefits-container {

@@ -1,39 +1,39 @@
 import React from "react";
-import "./AboutUs.css";
-import OurServices from "../../Components/OurServices/OurServices";
-import pottery01 from "../../Components/Images/tech02.jpg";
+import SpecialCategory from "../../Components/SpecialCategory/SpecialCategory";
 import GenericButton from "../../Components/Button";
+
+import about01 from "../../Components/Images/about01.jpg";
+import "./AboutUs.css";
+
+
 
 function AboutUs() {
   return (
     <div>
       <div className="about-me-container">
         <div className="about-us-content">
-          <h2>About </h2>
-          <h3>My Developer Profile</h3>
+          <h2>About Pampa</h2>
+          <h3>Our Story</h3>
           <p>
-            <b>+3 years</b> of experience developing applications and websites.  <br/>
-            Passionate about <b>UX/UI</b> experience. <br/> Worked with API (RESTful
-            applications), backend services, databases, and different
-            frameworks.
+            Welcome to <b>Pampa</b>, where tradition meets passion. Our journey began in the heart of a small town, inspired by the vast plains and golden sunsets of the Pampas. We wanted to bring the warmth of home and the taste of nostalgia to every bite.
           </p>
-          <h4>Main skills </h4>
-          <ul>
-            <li>React JS, HTML, CSS</li>
-            <li>JavaScript (ongoing training on Node.js+Express+MongoDB)</li>
-            <li>Experience with Python, SQL, Cherrypy framework</li>
-          </ul>
+          <p>
+            At <b>Pampa</b>, we believe in the magic of simple ingredients. Every loaf is baked with love, using time-honored recipes passed down through generations. Our mission is to create a place where you feel like family, where the aroma of freshly baked bread and pastries invites you to slow down and savor the moment.
+          </p>
+          <p>
+            From classic croissants to artisanal breads, each product is crafted to perfection. We invite you to join us, share a story, and taste the tradition of <b>Pampa</b>.
+          </p>
           <GenericButton
-            text="LinkedIn"
-            to="https://www.linkedin.com/in/camila-riboldi/"
+            text="Order Now"
+            to="/order"
           />
         </div>
         <div className="image-container">
-          <img src={pottery01} alt="tech" />
+          <img src={about01} alt="bakery" />
         </div>
       </div>
 
-      <OurServices />
+      <SpecialCategory/>
     </div>
   );
 }

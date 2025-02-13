@@ -4,26 +4,32 @@ import portfolio03 from "./Components/Images/portfolio03.png"
 import portfolio04 from "./Components/Images/portfolio04.png"
 import portfolio05 from "./Components/Images/portfolio05.png"
 
+import icon01 from "./Components/Images/icon01.png"
+import icon02 from "./Components/Images/icon02.png"
+import icon03 from "./Components/Images/icon03.png"
+
+
 
 export const mockData = {
-  title: "Freshly Baked Just for You!",
+  title: "Freshly Baked ",
+  titleSecound: "Just for You!",
   description:
     "Delicious treats crafted with love and the finest ingredients. Satisfy your cravings today!",
   benefits: [
     {
-      icon: "https://via.placeholder.com/50",
+      icon: icon01,
       title: "Artisan Breads",
       description:
         "Handcrafted daily with natural ingredients for that perfect crunch and softness.",
     },
     {
-      icon: "https://via.placeholder.com/50",
+      icon: icon02,
       title: "Sweet Pastries",
       description:
         "Indulge in our freshly baked pastries, filled with love and flavor.",
     },
     {
-      icon: "https://via.placeholder.com/50",
+      icon: icon03,
       title: "Custom Cakes",
       description:
         "Celebrate your special moments with our beautifully crafted custom cakes.",

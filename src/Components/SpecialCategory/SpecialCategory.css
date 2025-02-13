@@ -1,0 +1,35 @@
+.special-category-container {
+  margin: 0 auto;
+  padding: 5% 15%;
+}
+
+.exclusive-category {
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.exclusive-category h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.exclusive-category p {
+  color: #888;
+}
+
+.swiper-slide {
+  height: 380px;
+}
+
+.special-img {
+  border-radius: 15px;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.highlight-word {
+  color: grey;
+}

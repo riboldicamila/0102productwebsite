@@ -1,7 +1,6 @@
 
 import Carousel from "../../Components/Carousel/Carousel";
 import InformationBanner from "../../Components/InformationBanner/InformacionBanner";
-import SpecialCategory from "../../Components/SpecialCategory.jsx/SpecialCategory";
 import { mockData } from "../../HomeData.js";
 
 import home01 from "../../Components/Images/home01.jpg";
@@ -14,11 +13,11 @@ function Home() {
       <Carousel image1={home01} image2={home02} image3={home03} />
       <InformationBanner
         title={mockData.title}
+        titleSecound={mockData.titleSecound}
         description={mockData.description}
         benefits={mockData.benefits}
+        icon= {mockData.icon}
       />
-    
-     
     </div>
   );
 }
