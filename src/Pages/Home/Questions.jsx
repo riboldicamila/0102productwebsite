@@ -34,7 +34,7 @@ const Questions = () => {
   ];
 
   return (
-    <div className="container">
+    <div className="question-container">
       <div className="content-wrapper">
         <div className="image-section">
           <img src={qa01} alt="Pampa Bakery" className="main-image" />
