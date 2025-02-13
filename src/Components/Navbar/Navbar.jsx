@@ -1,15 +1,18 @@
 import { useState, useEffect } from 'react';
-import { FaEnvelope, FaGlobe, FaBars, FaTimes } from 'react-icons/fa';
+import { FaEnvelope, FaGlobe, FaBars, FaTimes, FaShoppingCart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';  
 import { navLinksLeft, navLinksRight } from '../../Data/NavbarData';
-
 import logoImage from '../Images/logo.png';
-
 import './Navbar.css';
 
 function Navbar() {
   const [isSticky, setIsSticky] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Get cart state from Redux
+  const cartItems = useSelector((state) => state.cart?.items);
+  const cartItemCount = cartItems?.reduce((total, item) => total + item.quantity, 0);
 
   const handleScroll = () => {
     setIsSticky(window.scrollY > 0);
@@ -23,8 +26,7 @@ function Navbar() {
   return (
     <div>
       <div className="top-bar">
-        <span> Free pickup in any of our stores - Free shipping on orders above £50
-        </span>
+        <span>Free pickup in any of our stores - Free shipping on orders above £50</span>
       </div>
 
       <nav className={`navbar ${isSticky ? 'sticky' : ''}`}>
@@ -50,6 +52,14 @@ function Navbar() {
               <Link to={link.path}>{link.name}</Link>
             </li>
           ))}
+          <li className="cart-icon">
+            <Link to="/cart">
+              <FaShoppingCart />
+              {cartItemCount > 0 && (
+                <span className="cart-count">{cartItemCount}</span>
+              )}
+            </Link>
+          </li>
         </ul>
       </nav>
       <div className="thin-line"></div>
