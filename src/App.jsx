@@ -11,7 +11,7 @@ import Contact from './Pages/Home/Contact';
 import CollectionPage from './Pages/Home/Collection';
 import CreationsDetails from './Components/CreationsCarousel/CreationsDetails';
 import Questions from './Pages/Home/Questions';
-// import Cart from './Components/Cart/Cart';
+import Cart from './Components/Cart/Cart';
 
 function App() {
   return (
@@ -28,7 +28,7 @@ function App() {
               <Route path="/technologies" element={<CollectionPage />} />
               <Route path="/blog/:slug" element={<CreationsDetails />} />
               <Route path="/qa" element={<Questions />} />
-              {/* <Route path="/cart" element={<Cart />} /> */}
+              <Route path="/cart" element={<Cart />} />
             </Routes>
           </div>
           <Footer />

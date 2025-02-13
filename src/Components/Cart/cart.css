@@ -1,0 +1,74 @@
+/* src/components/CartSummary.css */
+.cart-summary {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 350px;
+    margin: 50px auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  .cart-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .cart-items {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+  
+  .item-name {
+    font-size: 18px;
+    margin: 0;
+  }
+  
+  .item-quantity {
+    font-size: 14px;
+    color: gray;
+    margin: 0;
+  }
+  
+  .item-price-remove {
+    text-align: right;
+  }
+  
+  .item-price {
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .remove-button {
+    background: none;
+    border: none;
+    color: red;
+    cursor: pointer;
+    font-size: 12px;
+    margin-top: 5px;
+    text-decoration: underline;
+  }
+  
+  .remove-button:hover {
+    color: darkred;
+  }
+  
+  .divider {
+    border: none;
+    border-top: 1px solid #e0e0e0;
+    margin: 20px 0;
+  }
+  
+  .total {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: right;
+  }
+  
