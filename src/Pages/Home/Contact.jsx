@@ -1,7 +1,8 @@
-import './Contact.css';
-import { contactInfo } from '../../Data/ContactData'; 
 import contact01 from "../../Components/Images/contact01.jpg";
 import { FaFacebook, FaInstagram, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa"; 
+
+import './Contact.css';
+
 
 const Contact = () => {
   const socialLinks = [

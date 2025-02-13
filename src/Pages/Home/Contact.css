@@ -20,6 +20,7 @@
   .contact-image {
     flex: 1;
     max-width: 50%;
+    max-height: 500px;
   }
   
   .main-image {
