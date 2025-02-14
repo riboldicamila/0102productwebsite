@@ -1,40 +1,44 @@
 import React from 'react';
-import './cart.css'
+import { useSelector, useDispatch } from 'react-redux';
+import { removeFromCart, toggleCart } from '../../redux/features/cartSlice';
+
+import './Cart.css';
 
 const Cart = () => {
-  const cartItems = [
-    { id: 1, name: 'Product 1', price: 20, quantity: 2 },
-    { id: 2, name: 'Product 2', price: 15, quantity: 1 },
-    { id: 3, name: 'Product 3', price: 30, quantity: 3 }
-  ];
-
-  const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
+  const dispatch = useDispatch();
+  const { items, isOpen } = useSelector(state => state.cart);
+  
+  const total = items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
 
   return (
-    <div className="cart-summary">
-      <h2 className="cart-title">Shopping Summary</h2>
-      <ul className="cart-items">
-        {cartItems.map((item) => (
-          <li key={item.id} className="cart-item">
-            <div>
-              <h3 className="item-name">{item.name}</h3>
-              <p className="item-quantity">Quantity: {item.quantity}</p>
-            </div>
-            <div className="item-price-remove">
-              <p className="item-price">${item.price * item.quantity}</p>
-              <button
-                className="remove-button"
-                onClick={() => alert('Remove logic here')}
+    <div className="cart-overlay">
+      <div className="cart-container">
+        <div className="cart-header">
+          <h2>Your Order Selection</h2>
+        </div>
+        <div className="cart-items">
+          {items.map(item => (
+            <div key={item.id} className="cart-item">
+              <img src={item.image} alt={item.name} />
+              <div className="item-details">
+                <h3>{item.name}</h3>
+                <p>${item.price}</p>
+                <p>Quantity: {item.quantity}</p>
+                <p>Total: ${(item.price * item.quantity).toFixed(2)}</p>
+              </div>
+              <button 
+                onClick={() => dispatch(removeFromCart(item.id))}
+                className="remove-btn"
               >
                 Remove
               </button>
             </div>
-          </li>
-        ))}
-      </ul>
-      <hr className="divider" />
-      <div className="total">
-        Total: ${total}
+          ))}
+        </div>
+        <div className="cart-footer">
+          <div className="total">Total: ${total.toFixed(2)}</div>
+          <button className="checkout-btn">Checkout</button>
+        </div>
       </div>
     </div>
   );

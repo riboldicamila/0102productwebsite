@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { getDatabase, ref, get } from "firebase/database";
 import { app } from "../../firebase/config";
 import GenericButton from "../../Components/Button";
+import { addToCart } from "../../redux/features/cartSlice"; 
 
 import "./CollectionPage.css";
 
 const CollectionPage = () => {
+  const dispatch = useDispatch();
   const [viewMode, setViewMode] = useState("grid");
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [quantities, setQuantities] = useState({});
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -37,13 +41,34 @@ const CollectionPage = () => {
     fetchProducts();
   }, []);
 
+  const handleQuantityChange = (productId, change) => {
+    setQuantities(prev => ({
+      ...prev,
+      [productId]: Math.max(0, (prev[productId] || 0) + change)
+    }));
+  };
+
+  const handleAddToCart = (product) => {
+    const quantity = quantities[product.id] || 0;
+    if (quantity > 0) {
+      dispatch(addToCart({
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        image: product.image,
+        quantity
+      }));
+      // Reset quantity after adding to cart
+      setQuantities(prev => ({ ...prev, [product.id]: 0 }));
+    }
+  };
+
   if (loading) {
     return <div>Loading...</div>;
   }
 
   return (
     <div className="collection-container">
-      
       <div className="collection-header">
         <h1 className="collection-title">Our Bakery Delights</h1>
         <p className="collection-description">
@@ -62,9 +87,7 @@ const CollectionPage = () => {
         <div className="collection-controls">
           <div className="view-controls">
             <button
-              className={`view-btn ${
-                viewMode === "grid-large" ? "active" : ""
-              }`}
+              className={`view-btn ${viewMode === "grid-large" ? "active" : ""}`}
               onClick={() => setViewMode("grid-large")}
             >
               ⊞
@@ -91,13 +114,30 @@ const CollectionPage = () => {
               </div>
               <div className="product-info">
                 <h3>{product.name}</h3>
-                <p className="product-price">${product.price}</p>{" "}
+                <p className="product-price">${product.price}</p>
                 <div className="quantity-controls">
-                  <button className="quantity-btn minus-btn">-</button>
-                  <span className="quantity-value">0</span>
-                  <button className="quantity-btn plus-btn">+</button>
+                  <button 
+                    className="quantity-btn minus-btn"
+                    onClick={() => handleQuantityChange(product.id, -1)}
+                  >
+                    -
+                  </button>
+                  <span className="quantity-value">
+                    {quantities[product.id] || 0}
+                  </span>
+                  <button 
+                    className="quantity-btn plus-btn"
+                    onClick={() => handleQuantityChange(product.id, 1)}
+                  >
+                    +
+                  </button>
                 </div>
-                <button className="add-to-cart-btn">Add to Cart</button>
+                <button 
+                  className="add-to-cart-btn"
+                  onClick={() => handleAddToCart(product)}
+                >
+                  Add to Cart
+                </button>
               </div>
             </div>
           ))}
