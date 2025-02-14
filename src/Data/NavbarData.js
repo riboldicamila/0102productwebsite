@@ -5,7 +5,7 @@ export const navLinksLeft = [
   ];
   
   export const navLinksRight = [
-    { name: "Shop", path: "/creations" },
+    { name: "Shop", path: "/shop" },
     { name: "Contact", path: "/contact" },
   ];
   

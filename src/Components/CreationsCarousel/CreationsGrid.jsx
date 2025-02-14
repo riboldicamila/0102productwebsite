@@ -1,39 +1,40 @@
-import React, {useParams} from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 import { blogs } from "../../HomeData.js";
 
 import './CreationsStyles.css';
 
+
 const CreationsGrid = () => {
+  const [cartItems, setCartItems] = useState([]);
+
+  const handleCartToggle = (id) => {
+    if (cartItems.includes(id)) {
+      setCartItems(cartItems.filter(item => item !== id));
+    } else {
+      setCartItems([...cartItems, id]);
+    }
+  };
 
   return (
     <div className="container">
-      <div className="header">
-        <h1>Projects</h1>
-      </div>
-      
       <div className="blog-grid">
         {blogs.map((blog) => (
           <article key={blog.id} className="blog-card">
-            <Link to={`/blog/${blog.slug}`} className="blog-link">
-              <div className="blog-image">
-                <img src={blog.image} alt={blog.title} />
-              </div>
-              
-              <div className="blog-content">
-                <h2>{blog.title}</h2>
-                
-                <div className="blog-meta">
-                  <span>{blog.date}</span>
-                  <span className="separator">•</span>
-                  <span>{blog.author}</span>
-                </div>
-                
-                <p className="blog-subtitle">{blog.subtitle}</p>
-                
-                <span className="read-more">READ MORE</span>
-              </div>
-            </Link>
+            <div className="blog-image">
+              <img src={blog.image} alt={blog.title} />
+            </div>
+            
+            <div className="blog-content">
+              <h2>{blog.title}</h2>
+              <p className="blog-subtitle">{blog.subtitle}</p>
+
+              <button 
+                className="cart-button" 
+                onClick={() => handleCartToggle(blog.id)}
+              >
+                {cartItems.includes(blog.id) ? 'Remove -' : 'Add to cart +'}
+              </button>
+            </div>
           </article>
         ))}
       </div>

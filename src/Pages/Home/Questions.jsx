@@ -41,7 +41,7 @@ const Questions = () => {
         </div>
 
         <div className="content-section">
-          <h2 className="faq-title">Q&A</h2>
+          <h2 className="faq-title">FAQ</h2>
           <p className="faq-subtitle">
             Your questions about our freshly baked goods, answered!
           </p>

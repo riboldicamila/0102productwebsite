@@ -140,6 +140,20 @@
     line-height: 1.8;
     color: #333;
   }
+
+  .cart-button {
+    background-color: #f0c040;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s;
+  }
+  
+  .cart-button:hover {
+    background-color: #d89b1f;
+  }
   
   @media (max-width: 768px) {
     .blog-grid {
