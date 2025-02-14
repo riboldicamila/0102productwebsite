@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getDatabase, ref, get } from "firebase/database";
-import { app } from '../../firebase/config'; 
+import { app } from "../../firebase/config";
 import "./CollectionPage.css";
 import GenericButton from "../../Components/Button";
 
@@ -15,13 +15,13 @@ const CollectionPage = () => {
         const database = getDatabase();
         const productsRef = ref(database, "products");
         const snapshot = await get(productsRef);
-        
+
         if (snapshot.exists()) {
           const productsData = [];
           snapshot.forEach((childSnapshot) => {
             productsData.push({
               id: childSnapshot.key,
-              ...childSnapshot.val()
+              ...childSnapshot.val(),
             });
           });
           setProducts(productsData);
@@ -37,7 +37,7 @@ const CollectionPage = () => {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>; 
+    return <div>Loading...</div>;
   }
 
   return (
@@ -76,7 +76,6 @@ const CollectionPage = () => {
           </button>
         </div>
       </div>
-
       <div className={`products-grid ${viewMode}`}>
         {products.map((product) => (
           <div key={product.id} className="product-card">
@@ -85,6 +84,13 @@ const CollectionPage = () => {
             </div>
             <div className="product-info">
               <h3>{product.name}</h3>
+              <p className="product-price">${product.price}</p>{" "}
+              <div className="quantity-controls">
+                <button className="quantity-btn minus-btn">-</button>
+                <span className="quantity-value">0</span>
+                <button className="quantity-btn plus-btn">+</button>
+              </div>
+              <button className="add-to-cart-btn">Add to Cart</button>
             </div>
           </div>
         ))}
