@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeFromCart, sendOrder, resetOrderState } from '../../redux/features/cartSlice';
-import './Cart.css';
 import CheckoutBanner from '../CheckoutBanner/CheckoutBanner'; 
+
+import './cart.css';
+
 
 const Cart = () => {
   const dispatch = useDispatch();
