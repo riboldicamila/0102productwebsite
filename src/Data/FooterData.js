@@ -4,8 +4,8 @@ export const aboutLinks = [
 ];
 
 export const businessLinks = [
-  { name: "FAQ", path: "/technologies" },
-  { name: "Shop", path: "/creations" },
+  { name: "FAQ", path: "/qa" },
+  { name: "Shop", path: "/shop" },
   { name: "Contact", path: "/contact" },
 ];
 

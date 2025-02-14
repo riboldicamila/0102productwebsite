@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeFromCart, sendOrder, resetOrderState } from '../../redux/features/cartSlice';
 import './Cart.css';
-import CheckoutBanner from '../CheckoutBanner/CheckoutBanner'; // Import the Banner component
+import CheckoutBanner from '../CheckoutBanner/CheckoutBanner'; 
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -14,7 +14,7 @@ const Cart = () => {
     dispatch(sendOrder()); // Dispatch action to send the order and clear cart
     setTimeout(() => {
       dispatch(resetOrderState()); // Reset order state after a few seconds
-    }, 3000); // Adjust timing as needed
+    }, 3000); //time
   };
 
   return (

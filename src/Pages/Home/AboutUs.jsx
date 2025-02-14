@@ -25,7 +25,7 @@ function AboutUs() {
           </p>
           <GenericButton
             text="Order Now"
-            to="/order"
+            to="/shop"
           />
         </div>
         <div className="image-container">

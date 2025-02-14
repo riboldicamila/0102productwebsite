@@ -5,7 +5,7 @@ import './checkoutBanner.css';
 
 const CheckoutBanner = () => {
   const dispatch = useDispatch();
-  const orderNumber = Math.floor(Math.random() * 1000000); // Generate a random order number
+  const orderNumber = Math.floor(Math.random() * 1000000); 
   
   const handleClose = () => {
     dispatch(resetOrderState()); // Reset order state when closing banner
