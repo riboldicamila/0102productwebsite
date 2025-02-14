@@ -3,6 +3,11 @@
     margin: 0 auto;
     padding: 20px;
   }
+
+  .banner{
+    background-image: url('src/Components/Images/shop01.png');
+    color: white;
+  }
   
   .collection-title {
     font-size: 28px;
@@ -231,7 +236,19 @@
   .add-to-cart-btn:hover {
     background-color: #ffdd33;
   }
-    
+
+  .collection-products {
+    max-width: 60%;
+    margin: 0 auto; 
+    display: block; 
+  }
+  
+  .collection-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
   
   /* Responsive Design */
   @media (max-width: 768px) {
