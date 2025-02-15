@@ -1,6 +1,5 @@
 .top-bar {
   display: flex;
-  justify-content: space-around;
   align-items: center;
   background-color: #F48FB1;
   color: white;
@@ -9,6 +8,11 @@
   font-size: 12px;
   text-transform: uppercase;
   font-weight: 500;
+  justify-content: center; 
+}
+
+.top-bar span {
+  margin-left: 10px; 
 }
 
 .navbar {
