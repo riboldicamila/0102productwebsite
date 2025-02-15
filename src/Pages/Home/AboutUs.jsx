@@ -1,6 +1,6 @@
 import React from "react";
 import SpecialCategory from "../../Components/SpecialCategory/SpecialCategory";
-import GenericButton from "../../Components/Button";
+import GenericButton from "../../Components/GenericButton";
 
 import about01 from "../../Components/Images/about01.jpg";
 import "./AboutUs.css";

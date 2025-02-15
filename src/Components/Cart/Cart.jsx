@@ -1,17 +1,24 @@
-import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { removeFromCart, sendOrder, resetOrderState } from '../../redux/features/cartSlice';
-import CheckoutBanner from '../CheckoutBanner/CheckoutBanner'; 
+import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  removeFromCart,
+  sendOrder,
+  resetOrderState,
+} from "../../redux/features/cartSlice";
+import CheckoutBanner from "../CheckoutBanner/CheckoutBanner";
 
-import './cart.css';
-
+import "./cart.css";
+import GenericButton from "../GenericButton";
 
 const Cart = () => {
   const dispatch = useDispatch();
-  const { items, isOpen, orderSent } = useSelector(state => state.cart);
-  
-  const total = items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-  
+  const { items, isOpen, orderSent } = useSelector((state) => state.cart);
+
+  const total = items.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0
+  );
+
   const handleSendOrder = () => {
     dispatch(sendOrder()); // Dispatch action to send the order and clear cart
     setTimeout(() => {
@@ -20,13 +27,13 @@ const Cart = () => {
   };
 
   return (
-    <div className="cart-overlay">
+    <div className="cart-page">
       <div className="cart-container">
         <div className="cart-header">
           <h2>Your Order Selection</h2>
         </div>
         <div className="cart-items">
-          {items.map(item => (
+          {items.map((item) => (
             <div key={item.id} className="cart-item">
               <img src={item.image} alt={item.name} />
               <div className="item-details">
@@ -35,7 +42,7 @@ const Cart = () => {
                 <p>Quantity: {item.quantity}</p>
                 <p>Total: ${(item.price * item.quantity).toFixed(2)}</p>
               </div>
-              <button 
+              <button
                 onClick={() => dispatch(removeFromCart(item.id))}
                 className="remove-btn"
               >
@@ -46,12 +53,7 @@ const Cart = () => {
         </div>
         <div className="cart-footer">
           <div className="total">Total: ${total.toFixed(2)}</div>
-          <button 
-            className="checkout-btn"
-            onClick={handleSendOrder}
-          >
-            Send Order
-          </button>
+          <GenericButton text="Send Order" onClick={handleSendOrder} />
         </div>
       </div>
       {orderSent && <CheckoutBanner />}

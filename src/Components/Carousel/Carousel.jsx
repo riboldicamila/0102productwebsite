@@ -6,7 +6,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 
-import GenericButton from "../Button";
+import GenericButton from "../GenericButton";
 
 import "./Carousel.css";
 

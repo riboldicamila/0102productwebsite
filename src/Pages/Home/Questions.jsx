@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import GenericButton from "../../Components/Button";
+import GenericButton from "../../Components/GenericButton";
 import qa01 from "../../Components/Images/qa01.jpg";
 import "./Questions.css"; 
 
