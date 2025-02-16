@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux/store/store';
-import './App.css';
 import Footer from './Components/footer/Footer';
 import Navbar from './Components/navbar/Navbar';
 import Home from './Pages/Home/Home';
@@ -10,6 +9,8 @@ import Contact from './Pages/Home/Contact';
 import CollectionPage from './Pages/Home/Collection';
 import Questions from './Pages/Home/Questions';
 import Cart from './Components/cart/Cart';
+
+import './App.css';
 
 function App() {
   return (
