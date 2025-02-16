@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
+
 import { aboutLinks, businessLinks, contactInfo } from "../../Data/FooterData";
 
-import "./Footer.css";
+import "./footer.css";
 
 const Footer = () => {
   return (

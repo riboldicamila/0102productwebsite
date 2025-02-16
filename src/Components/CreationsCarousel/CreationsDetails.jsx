@@ -1,8 +1,10 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
+
 import { blogs } from '../../HomeData.js';
 import GenericButton from '../Button.jsx';
-import './CreationsStyles.css';
+
+import './creationsStyles.css';
 
 const CreationsDetails = () => {
   const { slug } = useParams();

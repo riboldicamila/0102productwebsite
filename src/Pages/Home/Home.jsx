@@ -1,12 +1,12 @@
 
-import Carousel from "../../Components/Carousel/Carousel";
-import InformationBanner from "../../Components/InformationBanner/InformacionBanner";
+import Carousel from "../../Components/carousel/Carousel.jsx";
+import InformationBanner from "../../Components/informationBanner/InformacionBanner.jsx";
 import { mockData } from "../../HomeData.js";
 
 import home01 from "../../Components/Images/home01.jpg";
 import home02 from "../../Components/Images/home02.jpg";
 import home03 from "../../Components/Images/home03.jpg";
-import ImageGallery from "../../Components/ImageGallery/ImagaGallery.jsx";
+import ImageGallery from "../../Components/imageGallery/ImagaGallery.jsx";
 
 function Home() {
   return (

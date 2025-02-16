@@ -5,7 +5,7 @@ import {
   sendOrder,
   resetOrderState,
 } from "../../redux/features/cartSlice";
-import CheckoutBanner from "../CheckoutBanner/CheckoutBanner";
+import CheckoutBanner from "../checkoutBanner/CheckoutBanner";
 
 import "./cart.css";
 import GenericButton from "../GenericButton";

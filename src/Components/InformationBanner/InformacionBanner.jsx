@@ -1,4 +1,4 @@
-import "./InformationBanner.css";
+import "./informationBanner.css";
 
 const InformationBanner = ({ title, titleSecound, description, benefits }) => {
   return (

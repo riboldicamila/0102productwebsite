@@ -8,7 +8,7 @@ import "swiper/css/autoplay";
 
 import GenericButton from "../GenericButton";
 
-import "./Carousel.css";
+import "./carousel.css";
 
 register();
 

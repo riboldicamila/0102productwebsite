@@ -10,8 +10,7 @@ import about04 from "../../Components/Images/about04.jpg";
 import about05 from "../../Components/Images/about05.jpg";
 import about06 from "../../Components/Images/about06.jpg";
 
-
-import "./SpecialCategory.css";
+import "./specialCategory.css";
 
 const images = [
   {
