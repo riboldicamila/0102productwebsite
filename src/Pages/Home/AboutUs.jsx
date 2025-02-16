@@ -1,11 +1,10 @@
 import React from "react";
+
 import SpecialCategory from "../../Components/specialCategory/SpecialCategory";
 import GenericButton from "../../Components/GenericButton";
-
 import about01 from "../../Components/Images/about01.jpg";
-import "./AboutUs.css";
 
-
+import "./aboutUs.css";
 
 function AboutUs() {
   return (

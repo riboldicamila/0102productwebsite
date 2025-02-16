@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+
 import GenericButton from "../../Components/GenericButton";
 import qa01 from "../../Components/Images/qa01.jpg";
-import "./Questions.css"; 
+
+import "./questions.css"; 
 
 const Questions = () => {
   const [activeQuestion, setActiveQuestion] = useState(null);

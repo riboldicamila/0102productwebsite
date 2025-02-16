@@ -3,7 +3,6 @@ import { FaFacebook, FaInstagram, FaMapMarkerAlt, FaPhoneAlt } from "react-icons
 
 import './Contact.css';
 
-
 const Contact = () => {
   const socialLinks = [
     { name: "Instagram", icon: <FaInstagram size={24} />, link: "https://www.instagram.com/pampa_bakery" },

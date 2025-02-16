@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getDatabase, ref, get } from "firebase/database";
 import { app } from "../../firebase/config";
+
 import GenericButton from "../../Components/GenericButton";
 import { addToCart } from "../../redux/features/cartSlice"; 
 
-import "./CollectionPage.css";
+import "./collectionPage.css";
 
 const CollectionPage = () => {
   const dispatch = useDispatch();
