@@ -1,7 +1,11 @@
+.background-container{
+  background-color: #f8f8f8;
+}
+
 .collection-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 40px 10px;
   }
 
   .banner{
@@ -70,6 +74,7 @@
     border: 1px solid #ddd;
     padding: 5px 10px;
     cursor: pointer;
+    color:black;
   }
   
   .view-btn.active {

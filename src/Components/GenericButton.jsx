@@ -2,18 +2,30 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../Components/GenericButton.css';
 
-function GenericButton({ className = '', text = 'SUBSCRIBE', to = '/' }) {
+function GenericButton({ 
+  className = '', 
+  text = 'SUBSCRIBE', 
+  to = '/', 
+  disabled = false, 
+  handleClick 
+}) {
   const [isHovered, setIsHovered] = useState(false);
   const navigate = useNavigate();
 
   const handleMouseEnter = () => setIsHovered(true);
   const handleMouseLeave = () => setIsHovered(false);
 
-  const handleClick = () => {
-    if (to.startsWith('http://') || to.startsWith('https://')) {
-      window.open(to, '_blank', 'noopener,noreferrer');
-    } else {
-      navigate(to);
+  const onClickHandler = () => {
+    if (disabled) return; 
+
+    if (handleClick) {
+      handleClick(); 
+    } else if (to) {
+      if (to.startsWith('http://') || to.startsWith('https://')) {
+        window.open(to, '_blank', 'noopener,noreferrer');
+      } else {
+        navigate(to);
+      }
     }
   };
 
@@ -22,7 +34,8 @@ function GenericButton({ className = '', text = 'SUBSCRIBE', to = '/' }) {
       className={`subscribe-button ${className} ${isHovered ? 'hover' : ''}`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      onClick={handleClick}
+      onClick={onClickHandler}
+      disabled={disabled}
     >
       {text}
     </button>

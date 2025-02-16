@@ -33,27 +33,31 @@ const Cart = () => {
           <h2>Your Order Selection</h2>
         </div>
         <div className="cart-items">
-          {items.map((item) => (
-            <div key={item.id} className="cart-item">
-              <img src={item.image} alt={item.name} />
-              <div className="item-details">
-                <h3>{item.name}</h3>
-                <p>${item.price}</p>
-                <p>Quantity: {item.quantity}</p>
-                <p>Total: ${(item.price * item.quantity).toFixed(2)}</p>
+          {items && items.length > 0 ? (
+            items.map((item) => (
+              <div key={item.id} className="cart-item">
+                <img src={item.image} alt={item.name} />
+                <div className="item-details">
+                  <h3>{item.name}</h3>
+                  <p>${item.price}</p>
+                  <p>Quantity: {item.quantity}</p>
+                  <p>Total: ${(item.price * item.quantity).toFixed(2)}</p>
+                </div>
+                <button
+                  onClick={() => dispatch(removeFromCart(item.id))}
+                  className="remove-btn"
+                >
+                  Remove
+                </button>
               </div>
-              <button
-                onClick={() => dispatch(removeFromCart(item.id))}
-                className="remove-btn"
-              >
-                Remove
-              </button>
-            </div>
-          ))}
+            ))
+          ) : (
+            <p>No items in the cart. Add some! </p>
+          )}
         </div>
         <div className="cart-footer">
           <div className="total">Total: ${total.toFixed(2)}</div>
-          <GenericButton text="Send Order" onClick={handleSendOrder} />
+          <GenericButton text="Send Order" disabled= {items.length < 1} handleClick={handleSendOrder} />
         </div>
       </div>
       {orderSent && <CheckoutBanner />}

@@ -68,6 +68,7 @@ const CollectionPage = () => {
   }
 
   return (
+    <div className="background-container">
     <div className="collection-container">
       <div className="collection-header">
         <h1 className="collection-title">Our Bakery Delights</h1>
@@ -143,6 +144,7 @@ const CollectionPage = () => {
           ))}
         </div>
       </div>
+    </div>
     </div>
   );
 };
