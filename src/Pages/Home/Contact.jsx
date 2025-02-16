@@ -30,13 +30,13 @@ const Contact = () => {
           <div className="info-grid">
             <div className="info-item">
               <h3>Visit Us</h3>
-              <p><FaMapMarkerAlt /> 1234 Baker Street</p>
+              <p><FaMapMarkerAlt className="icon" /> <span>1234 Baker Street</span></p>
               <p>San Francisco, CA 94109, USA</p>
             </div>
             
             <div className="info-item">
               <h3>Phone Number</h3>
-              <p><FaPhoneAlt /> +1 (555) 123-4567</p>
+              <p><FaPhoneAlt className="icon" /> <span>+1 (555) 123-4567</span></p>
             </div>
             
             <div className="info-item">
