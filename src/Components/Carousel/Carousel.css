@@ -4,12 +4,12 @@
   }
   
   .swiper-pagination-bullet-active {
-    background-color: #ff5722; 
+    background-color:#C2185B; 
   }
   
 .swiper-button-next,
 .swiper-button-prev {
-  color: #ff0000; 
+  color:#C2185B; 
   background-color: transparent; 
   padding: 10px; 
 }
@@ -17,5 +17,36 @@
 .swiper-button-next::after,
 .swiper-button-prev::after {
   font-size: 20px; 
-  color: #e4c110;
+  color:#C2185B;
 }
+
+.carousel-content h2 {
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.carousel-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.carousel-content p {
+  font-size: 1rem;
+  max-width: 70%;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .carousel-content h2 {
+    font-size: 0.8rem;
+  }
+
+  .carousel-content h1 {
+    font-size: 2rem;
+  }
+
+  .carousel-content p {
+    font-size: 0.8rem;
+  }
+}
+

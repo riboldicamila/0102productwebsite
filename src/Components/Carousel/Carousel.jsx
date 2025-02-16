@@ -50,6 +50,7 @@ function Carousel({ image1, image2, image3 }) {
           />
           {index === 0 && (
             <div
+              className="carousel-content"
               style={{
                 position: "absolute",
                 top: "50%",
@@ -58,19 +59,9 @@ function Carousel({ image1, image2, image3 }) {
                 color: "white",
               }}
             >
-              <h2 style={{ fontSize: "1rem", textTransform: "uppercase" }}>
-                PAMPA BAKERY
-              </h2>
-              <h1 style={{ fontSize: "3rem", marginBottom: "1rem" }}>
-                Freshly Baked, Always Delicious
-              </h1>
-              <p
-                style={{
-                  fontSize: "1rem",
-                  maxWidth: "70%",
-                  marginBottom: "1rem",
-                }}
-              >
+              <h2>PAMPA BAKERY</h2>
+              <h1>Freshly Baked, Always Delicious</h1>
+              <p>
                 Crafted with love, baked to perfection. Savor the warmth of
                 every bite.
               </p>
